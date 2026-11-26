@@ -1,5 +1,3 @@
-package com.rega.navigation
-
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
@@ -158,6 +156,7 @@ private fun RegaHome() {
                         factory = { ctx -> WebView(ctx).apply {
                             settings.javaScriptEnabled = true
                             settings.domStorageEnabled = true
+                            settings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
                             settings.userAgentString = settings.userAgentString + " REGA-Android/1.0.0"
                             webChromeClient = WebChromeClient()
                             webViewClient = object : WebViewClient() {
@@ -373,3 +372,4 @@ private fun decodePolyline(encoded: String): List<Pair<Double, Double>> {
 }
 private fun formatDistance(meters: Int) = if (meters >= 1000) "%.1f km".format(Locale.US, meters / 1000.0) else "$meters m"
 private fun formatDuration(seconds: Int): String { val mins = seconds / 60; return if (mins >= 60) "${mins / 60} h ${mins % 60} min" else "$mins min" }
+
