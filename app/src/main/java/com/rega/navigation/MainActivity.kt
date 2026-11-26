@@ -1,3 +1,4 @@
+
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
@@ -7,6 +8,7 @@ import android.speech.tts.TextToSpeech
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.webkit.WebSettings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.compose.rememberLauncherForActivityResult
